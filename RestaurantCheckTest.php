@@ -25,7 +25,7 @@ class RestaurantCheckTest extends \PHPUnit\Framework\TestCase{
         $tax = 10;
         $tip = 10;
         $checkWithTax = restaurant_check($meal, $tax, $tip);
-        $checkWithoutTax = restraurant_check($meal, 0, $tip);
+        $checkWithoutTax = restaurant_check($meal, 0, $tip);
         $expectedTax = $meal * ($tax / 100);
         $this->assertEquals($checkWithTax, $checkWithoutTax + $expectedTax);
     }
