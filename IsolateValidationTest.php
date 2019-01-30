@@ -5,7 +5,7 @@ include 'isolate-validation.php';
 class IsolateValidationTest extends \PHPUnit\Framework\Testcase{
 
     public function testDecimalAgeNotValid(){
-        $submitted = array('age' => '6.7','price' => '100', 'name' => 'Julia');
+        $submitted = array('age' => '6.7', 'price' => '100', 'name' => 'Julia');
         list($errors, $input) = validate_form($submitted);
         //一つだけのエラーを期待する　年齢に関するエラー
         $this->assertContains('Please enter a valid age.', $errors);
