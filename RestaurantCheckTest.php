@@ -20,6 +20,16 @@ class RestaurantCheckTest extends \PHPUnit\Framework\TestCase{
         $this->assertEquals(120, $result);
     }
 
+    public function testTipIsNotOnTax(){
+        $meal = 100;
+        $tax = 10;
+        $tip = 10;
+        $checkWithTax = restaurant_check($meal, $tax, $tip);
+        $checkWithoutTax = restraurant_check($meal, 0, $tip);
+        $expectedTax = $meal * ($tax / 100);
+        $this->assertEquals($checkWithTax, $checkWithoutTax + $expectedTax);
+    }
+
 }
 
 ?>
